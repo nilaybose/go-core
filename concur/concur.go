@@ -5,7 +5,7 @@ import (
 	"runtime"
 	"sync"
 
-	"github.com/nilay.bose/go-core/c_channel"
+	"github.com/nilay.bose/go-core/utils"
 )
 
 func main() {
@@ -26,9 +26,7 @@ func main() {
 
 	var mu sync.Mutex
 
-	c_channel.Work()
-
-	c_channel.Info()
+	utils.Info()
 
 	for i := 0; i < 100; i++ {
 		go func() {
