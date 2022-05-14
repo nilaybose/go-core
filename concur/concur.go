@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"runtime"
 	"sync"
+
+	"github.com/nilay.bose/go-core/c_channel"
 )
 
 func main() {
@@ -23,6 +25,10 @@ func main() {
 	sg.Add(100)
 
 	var mu sync.Mutex
+
+	c_channel.Work()
+
+	c_channel.Info()
 
 	for i := 0; i < 100; i++ {
 		go func() {
